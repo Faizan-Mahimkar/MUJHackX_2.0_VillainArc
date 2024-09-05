@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #000;
+    overflow-x: hidden; /* Prevents horizontal scroll */
+}
+
+/* General wrapper adjustments */
+.wrapper, .wrapper2, .wrapper3, .wrapper4, .wrapper5 {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    background: #000;
+    box-shadow: 0 0 50px #90D26D;
+    border-radius: 20px;
+    padding: 40px;
+    margin: 2rem auto;
+}
+
+/* Responsive Wrappers */
+@media (max-width: 600px) {
+    .wrapper, .wrapper2, .wrapper3, .wrapper4, .wrapper5 {
+        padding: 20px;
+        max-width: 100%;
+    }
+}
+
+h2 {
+    font-size: 28px;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    position: relative;
+    margin: 20px 0;
+    border-bottom: 2px solid #fff;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    color: #fff;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #fff;
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+    top: -10px;
+    font-size: 12px;
+}
+
+.remember {
+    margin: -5px 0 15px 5px;
+}
+
+.remember label {
+    color: #fff;
+    font-size: 14px;
+}
+
+.remember label input {
+    accent-color: #90D26D;
+}
+
+/* Style for all buttons and dropdown */
+button, #hours {
+    background-color: #914F1E;
+    color: #000;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    text-align: center;
+    outline: none;
+}
+
+/* Remove default styling for dropdown arrow */
+#hours {
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none; /* Remove default arrow for Safari */
+    -moz-appearance: none; /* Remove default arrow for Firefox */
+}
+
+/* Custom dropdown arrow */
+.button-container {
+    position: relative;
+    display: inline-block;
+    margin: 10px; /* Add some space between buttons and select */
+}
+
+.button-container::after {
+    font-size: 12px;
+    color: #000;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none; /* Prevent interaction with the arrow */
+}
+
+/* Hover effect for buttons and dropdown */
+button:hover, #hours:hover {
+    background-color: #914F1E;
+    transform: translateY(-2px);
+    opacity: 0.8;
+}
+
+/* Active state for buttons and dropdown */
+button:active, #hours:active {
+    background-color: #914F1E;
+}
+
+/* Style for link buttons */
+.btn {
+    background-color: #914F1E;
+    color: #000;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Same style as select */
+    text-align: center;
+}
+
+/* Hover effect for .btn */
+.btn:hover {
+    background-color: #914F1E;
+    opacity:0.7;
+    transform: translateY(-2px);
+}
+
+/* Active state for .btn */
+.btn:active {
+    background-color: #914F1E;
+}
+
+/* Center the form within the container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px; /* Adjust width as needed */
+    margin: 0 auto; /* Center horizontally */
+    padding: 20px;
+}
+
+/* Style the label and dropdown wrapper */
+.form-wrapper {
+    display: block;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0; /* Padding for top and bottom */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px; /* Space between form elements */
+}
+
+.form-group label {
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 10px; /* Space between label and dropdown */
+}
+
+.form-group select {
+    width: 100%;
+    max-width: 400px; /* Limit dropdown width */
+    border-radius: 20px;
+}
+
+/* Align the button containers */
+.button-container {
+    margin-top: 20px;
+}

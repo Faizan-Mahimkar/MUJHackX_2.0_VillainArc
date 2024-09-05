@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SustainaWatt</title>
+    <link rel="stylesheet" href="/static/css/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="/static/css/app1.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.11/typed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <style>
+        .form-wrapper {
+            display: block;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding: 20px 0; /* Padding for top and bottom */
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo">
+                <a href="/home">Sustaina<span>Watt</span></a>
+            </div>
+            <ul class="menu">
+                <li><a href="/" class="menu-btn">Home</a></li>
+                <li><a href="/home#about" class="menu-btn">About</a></li>
+                <li><a href="/home#services" class="menu-btn">Services</a></li>
+                <li><a href="/home#teams" class="menu-btn">Teams</a></li>
+                <li><a href="/home#contact" class="menu-btn">Contact</a></li>
+            </ul>
+            <div class="menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="wrapper3">
+            <div class="form-wrapper">
+                <p style="margin-bottom: 20px;">The predicted power generation is: <span>{{ predicted_power_gen }}</span></p>
+                
+                <div class="form-group">
+                    <div class="dropdown-wrapper">
+                        <label for="hours">Check for more hours:</label>
+                        <div class="button-container">
+                            <select id="hours">
+                                <option value="" disabled selected>Check for more hours</option> <!-- Default label -->
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Check for More Data Button -->
+        <div class="button-container">
+            <a href='/input_form'>
+                <button type="submit" class="btn" style="margin-bottom: 20px;">Check for more data</button>
+            </a>
+        </div>
+        <br>
+
+        <!-- Check Smart Grid Stability Button -->
+        <div class="button-container">
+            <a href='/check_smart_grid_stability'>
+                <button type="submit" class="btn">Proceed to Check Smart Grid Stability</button>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const hoursSelect = document.getElementById('hours');
+        for (let i = 0; i < 24; i++) {
+            const option = document.createElement('option');
+            option.value = `${String(i).padStart(2, '0')}:00`;
+            option.textContent = `${String(i).padStart(2, '0')}:00`;
+            hoursSelect.appendChild(option);
+        }
+    </script>
+</body>
+</html>

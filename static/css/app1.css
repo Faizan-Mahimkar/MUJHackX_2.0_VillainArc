@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #000; /* Default text color */
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #F7EED3; /* Light background for better contrast */
+}
+
+/* CSS to style input boxes and override autofill styles */
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    background-color: #000 !important; /* Set to your preferred background color */
+    color: #fff !important; /* Set to your preferred text color */
+}
+
+.wrapper, .wrapper2, .wrapper3, .wrapper4, .wrapper5 {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    background: #FFF8E8; /* Light background */
+    color: #000; /* Default text color */
+    border-radius: 20px;
+    padding: 40px;
+    margin: 2rem auto;
+    margin-top: 100px;
+}
+
+/* Responsive Wrappers */
+@media (max-width: 600px) {
+    .wrapper, .wrapper2, .wrapper3, .wrapper4, .wrapper5 {
+        padding: 20px;
+        max-width: 100%;
+    }
+}
+
+h2 {
+    font-size: 28px;
+    color: #000; /* Text color for h2 */
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 16px;
+    color: #000; /* Text color */
+    background: #fff; /* Background color */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    outline: none; /* Remove default outline */
+    transition: all 0.3s ease; /* Smooth transition for focus */
+}
+
+/* Focus State */
+input:focus {
+    border-color: #90D26D; /* Green border on focus */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Enhanced shadow */
+    background-color: #f9f9f9; /* Slightly darker background on focus */
+}
+
+/* Placeholder Styling */
+input::placeholder {
+    color: #888; /* Placeholder text color */
+    opacity: 1; /* Ensure placeholder text is visible */
+}
+
+/* Label Position */
+.input-group {
+    position: relative;
+    margin: 20px 0;
+}
+
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 16px;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #888; /* Label color */
+    pointer-events: none;
+    transition: all 0.3s ease; /* Smooth transition for label */
+}
+
+/* Label Focus State */
+.input-group input:focus ~ label,
+.input-group input:valid ~ label {
+    top: -10px;
+    left: 12px;
+    font-size: 12px;
+    color: #90D26D; /* Green color for label on focus */
+}
+
+button {
+    position: relative;
+    display: inline;
+    width: 100%;
+    height: 40px;
+    background: #914F1E;
+    font-size: 16px;
+    color: #000; /* Text color for buttons */
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+}
+
+.btn {
+    background-color: #8bffc9;
+    color: #000; /* Text color for buttons */
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Same style as select */
+}
+
+/* Hover effect for the buttons */
+.btn:hover {
+    background-color: #68d7a3;
+    transform: translateY(-2px);
+}
+
+/* Active state for the buttons */
+.btn:active {
+    background-color: #56b591;
+}
+
+.signUp-link p a {
+    color: #90D26D;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.signUp-link p a:hover {
+    text-decoration: underline;
+}
+
+/************************************ flash message ************************************/
+.flash-message-container {
+    bottom: 2px;
+}
+
+.flash-message-container ul {
+    list-style: none;
+    padding: 0;
+    bottom: 2px;
+}
+
+.flash-message-container li {
+    color: #042b49;
+    bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: aquamarine;
+}
+
+.flash-message-container button {
+    background-color: #2688d1;
+    color: #f0f2f4;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.flash-message-container button:hover {
+    background-color: #00ad94;
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.3s ease-out;
+}
+
+.centered-header {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    height: 100vh;           /* Full viewport height */
+    text-align: center;      /* Center text within the container */
+}
+
+.centered-header h1 {
+    font-size: 3rem;         /* Adjust as needed */
+    font-weight: 600;        /* Adjust as needed */
+    color: #000;             /* Adjust color as needed */
+}
+
+/* Center the form within the container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 600px; /* Adjust width as needed */
+    margin: 0 auto; /* Center horizontally */
+    padding: 20px;
+}
+
+/* Style form elements */
+.form-outline {
+    margin-bottom: 15px;
+}
+
+/* Style the select to look like buttons */
+#hours {
+    background-color: #8bffc9;
+    color: #000; /* Text color for select */
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    appearance: none; /* Remove default arrow */
+    -webkit-appearance: none; /* Remove default arrow for Safari */
+    -moz-appearance: none; /* Remove default arrow for Firefox */
+    text-align: center;
+}
+
+/* Hover effect for the select */
+#hours:hover {
+    background-color: #68d7a3;
+    transform: translateY(-2px);
+}
+
+/* Active state for the select */
+#hours:active {
+    background-color: #56b591;
+}
